@@ -1,0 +1,11 @@
+{
+  "name": "ai-config-guard",
+  "version": "1.0.0",
+  "description": "Scanner for AI coding assistant config file security — detects prompt injection, credential theft, and exfiltration patterns in CLAUDE.md, .cursorrules, .clinerules and more",
+  "main": "index.js",
+  "bin": {
+    "ai-config-guard": "index.js"
+  },
+  "keywords": ["ai", "security", "claude-code", "cursor", "cline", "copilot", "prompt-injection"],
+  "license": "MIT"
+}

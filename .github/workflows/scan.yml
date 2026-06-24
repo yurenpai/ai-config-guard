@@ -1,0 +1,28 @@
+name: AI Config Security Scan
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run ai-config-guard (SARIF)
+        run: node index.js . --sarif > ai-config-guard-results.sarif
+
+      - name: Upload to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ai-config-guard-results.sarif
+
+      - name: Block on HIGH severity
+        run: node index.js . --severity HIGH
