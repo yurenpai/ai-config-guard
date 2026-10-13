@@ -194,7 +194,7 @@ Also scans source code (`.js`, `.py`, `.ts`, `.java`, `.go`, `.rs`) for payload 
 ### Install
 
 ```bash
-git clone https://github.com/your-username/ai-config-guard.git
+git clone https://github.com/yurenpai/ai-config-guard.git
 cd ai-config-guard
 node index.js .
 ```
